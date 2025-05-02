@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  background: rgba(0, 0, 0, 0);
+  font-family: 'Courier New', Courier, monospace;
+  cursor: url('assets/img/scope.png') 16 16, auto;
+  overflow: hidden;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: #0a0a0a; /* Dark background for contrast */
+}
+
+#hud, #gameOver {
+  color: #00ff99; /* Neon green text color */
+}
+
+#topContainer {
+  position: relative;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  background: #111; /* Dark background */
+  padding: 10px 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#centerContainer {
+  margin: 30px auto;
+  width: 95%;
+  max-width: 1200px;
+  height: calc(100vh - 130px);
+  border-radius: 15px;
+  border: 2px solid #00ff99; /* Neon green border */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111; /* Dark background */
+  box-sizing: border-box;
+  box-shadow: 0 0 20px #00ff99; /* Glowing neon green border */
+}
+
+#hud {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-size: 18px;
+  gap: 15px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#highScore, #timer, #killCount {
+  padding: 5px 10px;
+  border: 2px solid #00ff99; /* Neon green border */
+  border-radius: 5px;
+  margin: 0 5px;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 0 10px #00ff99; /* Glowing neon green border */
+}
+
+#highScore {
+  position: absolute;
+  left: 10px;
+}
+
+#muteBtn {
+  position: absolute;
+  right: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #111; /* Dark background for buttons */
+  color: #00ff99; /* Neon green text */
+  border: 2px solid #00ff99; /* Neon green border */
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 0 10px #00ff99; /* Glowing neon green border */
+}
+
+#muteBtn:hover {
+  background-color: #00ff99; /* Neon green hover background */
+  color: black; /* Neon green text on hover */
+  box-shadow: 0 0 15px #00ff99; /* Glowing effect on hover */
+}
+
+#timer, #killCount {
+  margin: 0 15px;
+  text-align: center;
+}
+
+#hud span {
+  margin-right: 15px;
+}
+
+#gameArea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #111; /* Dark background */
+  box-sizing: border-box;
+  box-shadow: 0 0 20px #00ff99; /* Glowing neon green border */
+}
+
+.cockroach {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transition: transform 0.2s;
+  cursor: url('assets/img/scope.png') 16 16, auto;
+}
+
+.cockroach.dead {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+#startBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  background: #111; /* Dark background */
+  color: #00ff99; /* Neon green text */
+  border: 2px solid #00ff99; /* Neon green border */
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 0 15px #00ff99; /* Glowing neon green border */
+}
+
+#startBtn:hover {
+  background-color: #00ff99; /* Neon green hover background */
+  color: black; /* Dark text on hover */
+  box-shadow: 0 0 20px #00ff99; /* Glowing effect on hover */
+}
+
+#gameOver {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #00ff99; /* Neon green text */
+  z-index: 1000;
+  border: 2px solid #00ff99; /* Neon green border */
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 0 20px #00ff99; /* Glowing neon green border */
+}
+
+#gameOver button {
+  background: #111; /* Dark background for button */
+  color: #00ff99; /* Neon green text */
+  border: 2px solid #00ff99; /* Neon green border */
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 0 10px #00ff99; /* Glowing neon green border */
+}
+
+#gameOver button:hover {
+  background-color: #00ff99; /* Neon green hover background */
+  color: black; /* Dark text on hover */
+  box-shadow: 0 0 20px #00ff99; /* Glowing effect on hover */
+}
+
+#hud, #gameOver, #highScore, #timer, #killCount, #muteBtn, #startBtn, #gameOver button {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#gameOver h1 {
+  font-size: 18px;
+}
+
+#gameTitle {
+  text-align: center;
+  color: #00ff99; /* Neon green title */
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 20px 0;
+  padding: 10px 0;
+  background: #111; /* Dark background */
+  border-radius: 5px;
+  box-shadow: 0 0 15px #00ff99; /* Glowing neon green border */
+}
+
+@media (max-width: 768px) {
+  #topContainer {
+    padding: 10px 2%;
+  }
+
+  #centerContainer {
+    margin: 20px auto;
+    width: 90%;
+    height: calc(100vh - 150px);
+  }
+
+  #hud {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #highScore, #timer, #killCount {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  #muteBtn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #startBtn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  #gameOver {
+    width: 95%;
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  #gameOver button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #gameOver h1 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hud {
+    font-size: 12px;
+  }
+
+  #highScore, #timer, #killCount {
+    font-size: 10px;
+  }
+
+  #muteBtn, #startBtn, #gameOver button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  #gameOver {
+    max-width: 300px;
+  }
+}
